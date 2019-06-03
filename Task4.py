@@ -3,8 +3,8 @@ class add:
         self.number1=number1
         self.number2=number2
      
-    def prettyprint(self):
-        result=self.number1.prettyprint() + self.number2.prettyprint()
+    def res(self):
+        result=self.number1.res() + self.number2.res()
         return result
         
 class mul:
@@ -12,18 +12,18 @@ class mul:
         self.number3=number3
         self.number4=number4
         
-    def prettyprint(self):
-        result=self.number3.prettyprint() * self.number4.prettyprint()
+    def res(self):
+        result=self.number3.res() * self.number4.res()
         return result
     
 class num:
     def __init__(self,number5):
         self.number5=number5
-    def prettyprint(self):
+    def res(self):
         return int(self.number5)
 
 
 final=mul(num(10),add(num(10),num(20)))
-print(final.prettyprint())
+print(final.res())
 
 
