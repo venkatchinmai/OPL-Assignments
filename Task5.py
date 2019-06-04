@@ -1,10 +1,10 @@
-class nodel:
-    def __init__(self,nodelt):
-        self.nodelt=nodelt  
+class Cons:
+    def __init__(self,emp):
+        self.emp=emp 
 
-class noder:
-    def __init__(self,nodert):
-        self.nodert=nodert 
+class atom:
+    def __init__(self,at):
+        self.at=at
     
 class num:
     def __init__(self,number):
