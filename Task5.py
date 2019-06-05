@@ -1,6 +1,7 @@
 class Cons:
-    def __init__(self,emp):
-        self.emp=emp 
+    def __init__(self,left,right):
+        self.left=right
+        self.right=right 
 
 class atom:
     def __init__(self,at):
