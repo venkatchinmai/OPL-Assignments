@@ -44,9 +44,13 @@ def desugar(sexpr):
     if isinstance(sexpr,cons):
         if isinstance(sexpr.left,atom):
             if (sexpr.left.at=="+"):
-                return add(desugar(sexpr.right.left),desugar(sexpr.right.right.left))
+                a=desugar(sexpr.right.left)
+                b=desugar(sexpr.right.right.left)
+                return add(a,b)
             elif (sexpr.left.at=="*"):
-                return mul(desugar(sexpr.right.left),desugar(sexpr.right.right.left))
+                a=desugar(sexpr.right.left)
+                b=desugar(sexpr.right.right.left)
+                return mul(a,b)
     else:
         return num(sexpr.at)
 
