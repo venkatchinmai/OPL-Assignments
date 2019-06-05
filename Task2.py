@@ -16,6 +16,6 @@ class num:
     def __str__(self):
         return str(self.number5)
 
-final=add(num(3),mul(num(6),add(num(7),num(8))))
+final=add(add(22,mul(70,80)),mul(20,10))
 print(final)
 
