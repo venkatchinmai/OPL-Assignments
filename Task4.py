@@ -12,8 +12,8 @@ class mul:
         self.number3=number3
         self.number4=number4
     def __str__(self):
-        result=self.number3.res() * self.number4.res()
-        return result
+        return "(* "+str(self.number3)+" "+str(self.number4)+" )"
+
     def res(self):
         result=self.number3.res() * self.number4.res()
         return result
