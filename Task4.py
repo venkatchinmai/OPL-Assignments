@@ -12,7 +12,8 @@ class mul:
         self.number3=number3
         self.number4=number4
     def __str__(self):
-        return "(* "+str(self.number3)+" "+str(self.number4)+" )"
+        result=self.number3.res() * self.number4.res()
+        return result
     def res(self):
         result=self.number3.res() * self.number4.res()
         return result
@@ -27,7 +28,7 @@ class num:
 
 
 final=mul(num(10),add(num(10),num(20)))
-print(final)
+
 
 print(final.res())
 
