@@ -4,26 +4,19 @@ class add:
         self.number2=number2
     def __str__(self):
         return "(+ "+str(self.number1)+" "+str(self.number2)+" )"
-    def res(self):
-        result=self.number1.res() + self.number2.res()
-        return result    
+       
 class mul:
     def __init__(self,number3,number4):
         self.number3=number3
         self.number4=number4
     def __str__(self):
         return "(* "+str(self.number3)+" "+str(self.number4)+" )"
-    def res(self):
-        result=self.number3.res() * self.number4.res()
-        return result
+
 class num:
     def __init__(self,number5):
         self.number5=number5
     def __str__(self):
         return str(self.number5)
-
-    def res(self):
-        return int(self.number5)
 
 class cons:
     def __init__(self,left,right):
@@ -34,50 +27,58 @@ class atom:
     def __init__(self,at):
         self.at=at
 
-class empty:
-    def __inint__(self):
-        self.a=None
+   
+
+class E:
+    def __init__(self,opt):
+        self.opt=opt
+    def __str__(self):
+        if len(self.opt)==1:
+            return self.opt
+        elif len(self.opt)==3:
+            return iff(str(self.opt[1]),str(self.opt[2]),str(self.opt[3]))
+        else:
+            return 0
+       
 
 
+class iff:
+    def __init__(self,op1,op2,op3):
+        self.op1=op1
+        self.op2=op2
+        self.op3=op3
+    def __str__(self):
+        return "if(" + str(self.op1) + "," +str(self.op2)+ "," + str(self.op3) + ")"
 
-    
-class eee:
-    def __init__(self,e):
-        self.e=e
+def ee(*do):
+    for i in do:
+        opt=i
+        return(opt)
 
-class If:
-    def __init__(self,con,num1,num2):
-        self.con=con
-        self.num1=num1
-        self.num2=num2
+class val:
+    def __init__(self,a):
+        self.a=a
+    def __str__(self):
+        return str(self.a)
+    def value(self):
+        return str(self.a)
 
-class Bool:
-    def __init__(self,oper):
-        self.opr=oper
+class Boo:
+    def __init__(self,bo):
+        self.bo=bo
+    def __str__(self):
+        return str(self.bo)
 
-
-def desugar(sexpr):
-    if isinstance(sexpr,If):
-        if isinstance(sexpr.left,Bool):
-            if (sexpr.left.e=="+"):
-                a=desugar(sexpr.num1.num2)
-                b=desugar(sexpr.num1.num1.num2)
-                return add(a,b)
-            elif (sexpr.left.e=="*"):
-                a=desugar(sexpr.num1.num2)
-                b=desugar(sexpr.num1.num1.num2)
-                return mul(a,b)
-    else:
-        return num(sexpr.e)
+class prim:
+    def __init__(self,pr):
+        self.pr=pr
+    def value(self):
+        return str(self.pr)
+        
 
 
-a = add(3,mul(5,3))
-k=cons(atom("+"),cons(atom("3"),cons(cons(atom("*"),cons(atom("5"),cons(atom("3"),empty()))),empty())))
-objc=desugar(k)
-print(objc)
-
-j1=desugar(If( Bool(true),num(5),num(6)))
-print(j1)
+# j1=iff(Bool(True),num(6),num(6))
+print(iff('>',iff("<",num(7),num(6)),num(8)))
 
 
 
