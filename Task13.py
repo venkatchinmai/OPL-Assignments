@@ -36,20 +36,20 @@ class empty:
 
 #J1   
 opt=[]
-# class E:
-#     def __init__(self,*args):
-#         self.opt=args
-#         self.i=0
-#     def EV(self):
-#         if len(self.opt)==1:
-#             return str(self.opt)
-#         elif len(self.opt)==3:
-#             for opt in args:
-#                 opt[self.i]=args
+class E:
+    def __init__(self,*args):
+        self.opt=args
+        self.i=0
+    def EV(self):
+        if len(self.opt)==1:
+            return str(self.opt)
+        elif len(self.opt)==3:
+            # for opt in self.args:
+            #     opt[self.i]=args
                 
-#             return iff(str(self.opt[1]),str(self.opt[2]),str(self.opt[3]))
-#         else:
-#             return E(self.opt)
+            return iff(str(self.opt[1]),str(self.opt[2]),str(self.opt[3]))
+        else:
+            return E(self.opt)
     
 class iff:
     def __init__(self,op1,op2,op3):
