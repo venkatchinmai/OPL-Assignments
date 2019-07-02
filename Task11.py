@@ -163,6 +163,6 @@ class prim:
         return str(self.pr)
         
 
-j1=iff('<=',7,7)
+j1=iff('+',7,8)
 print(j1)
 print(j1.delta())
